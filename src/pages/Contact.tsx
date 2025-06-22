@@ -9,7 +9,7 @@ const Contact = () => {
     subject: '',
     message: ''
   });
-  const [successMessage, setSuccessMessage] = useState("");
+  const [successMessage, setSuccessMsg] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -23,10 +23,10 @@ const Contact = () => {
     // Handle form submission here
     console.log('Form submitted:', formData);
     // alert('Message sent successfully!');
-    setSuccessMessage("Message sent successfully!");
+    setSuccessMsg("Message sent successfully!");
     setFormData({ name: '', email: '', subject: '', message: '' });
     setTimeout(()=> {
-      setSuccessMessage("");
+      setSuccessMsg("");
     }, 2000);
   };
 
