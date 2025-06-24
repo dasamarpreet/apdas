@@ -4,26 +4,27 @@ import { ExternalLink, Github, Filter } from 'lucide-react';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All');
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'Full-stack e-commerce solution with React, Node.js, and Stripe integration. Features include user authentication, product management, and order processing.',
-      image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      category: 'Backend Engineering',
+      title: 'Genhance.ai',
+      description: 'Worked on Frontend & Backend Dev. part of this webapp which is purpose-built for the GenAI era, offering comprehensive solutions that go beyond tracking to provide actionable improvements and autonomous optimization for GEO(GenAI Engine Optimization).',
+      image: '/apdas/genhance_ai.jpg',
+      technologies: ['Python (flask)', 'Next.js', 'OpenAI API', 'AWS RDS'],
+      category: ['Full Stack Platforms', 'AI & Automation', 'Industry Projects'],
       github: '#',
       live: '#'
     },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['React', 'TypeScript', 'Socket.io', 'PostgreSQL'],
-      category: 'Full Stack Platforms',
-      github: '#',
+      title: 'Modified Text Editor',
+      description: 'Designed a Windows Text Editing software using Python. Include following features - Text box, menu bar, tool & status bar, font formattings, scroll bar, etc.',
+      image: '/apdas/modified_text_editor.webp',
+      technologies: ['Python3', 'Tkinter'],
+      category: ['Backend Engineering', 'Personal Projects'],
+      github: 'https://github.com/dasamarpreet/Modified_Text_Editor',
       live: '#'
     },
     {
@@ -32,7 +33,7 @@ const Projects = () => {
       description: 'Beautiful weather dashboard with location-based forecasts, interactive maps, and detailed weather analytics.',
       image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800',
       technologies: ['Vue.js', 'API Integration', 'Chart.js'],
-      category: 'Industry Projects',
+      category: ['Industry Projects'],
       github: '#',
       live: '#'
     },
@@ -42,7 +43,7 @@ const Projects = () => {
       description: 'AI-powered content generation tool using OpenAI API. Features include text generation, image creation, and content optimization.',
       image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800',
       technologies: ['Python', 'FastAPI', 'OpenAI', 'React'],
-      category: 'AI & Automation',
+      category: ['AI & Automation'],
       github: '#',
       live: '#'
     },
@@ -52,17 +53,17 @@ const Projects = () => {
       description: 'Secure mobile banking application with biometric authentication, transaction history, and budget tracking features.',
       image: 'https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=800',
       technologies: ['React Native', 'Firebase', 'Biometrics'],
-      category: 'Personal Projects',
+      category: ['Personal Projects'],
       github: '#',
       live: '#'
     },
     {
       id: 6,
-      title: 'Social Media Analytics',
-      description: 'Comprehensive social media analytics platform with data visualization, engagement tracking, and automated reporting.',
-      image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['React', 'D3.js', 'Node.js', 'MongoDB'],
-      category: 'Full Stack Platforms',
+      title: 'Task Management App',
+      description: 'Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
+      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
+      technologies: ['React', 'TypeScript', 'Socket.io', 'PostgreSQL'],
+      category: ['Full Stack Platforms'],
       github: '#',
       live: '#'
     }
@@ -72,7 +73,23 @@ const Projects = () => {
 
   const filteredProjects = activeFilter === 'All' 
     ? projects 
-    : projects.filter(project => project.category === activeFilter);
+    : projects.filter(project => project.category.includes(activeFilter));
+  
+  const openModal = (image: any) => {
+    console.log('opennnnnnnnn');
+    setSelectedImage(image);
+  };
+
+  // Function to close the modal
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
+
+  const handleBackdropClick = (e) => {
+    if (e.target === e.currentTarget) {
+      closeModal();
+    }
+  };
 
   return (
     <motion.div 
@@ -136,7 +153,8 @@ const Projects = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="glass-effect rounded-xl overflow-hidden hover-lift group"
+              className="glass-effect rounded-xl overflow-hidden hover-lift group cursor-pointer"
+              onClick={() => openModal(project.image)} // Open modal on image click
             >
               <div className="relative overflow-hidden">
                 <img
@@ -165,6 +183,7 @@ const Projects = () => {
                 <div className="flex gap-4">
                   <a
                     href={project.github}
+                    target='_blank'
                     className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-300"
                   >
                     <Github size={18} />
@@ -193,6 +212,34 @@ const Projects = () => {
           </motion.div>
         )}
       </div>
+
+      {/* Modal for Enlarged Image */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
+          onClick={handleBackdropClick} // Close modal if clicking outside
+        >
+          <motion.div 
+            className="relative max-w-3xl w-full"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.5 }}
+          >
+            <button
+              onClick={closeModal}
+              className="absolute top-0 right-0 p-4 text-white text-xl"
+            >
+              X
+            </button>
+            <img 
+              src={selectedImage} 
+              alt="Enlarged Project"
+              className="w-full h-auto"
+            />
+          </motion.div>
+        </div>
+      )}
     </motion.div>
   );
 };

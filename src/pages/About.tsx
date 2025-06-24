@@ -5,14 +5,14 @@ import { Calendar, MapPin } from 'lucide-react';
 const About = () => {
   const experiences = [
     {
-      title: 'Software Development Engineer',
+      title: 'Software Development Engineer - Full Time',
       company: 'Zestminds Technologies Pvt. Ltd.',
       period: 'July 2024 - Present',
       location: 'Mohali, India',
       description: 'I currently work as a Software Development Engineer where I design and develop scalable SaaS platforms and backend microservices using Python (Flask, Django) and JavaScript/TypeScript (Next.js). I actively integrate and manage AWS services like S3, SQS, Lambda, and EC2 to ensure high availability and performance. On the frontend, I implemented functionalities that includes calling APIs to post & fetch data, Netx-Auth for storing user session & role-based access. I also work with authentication flows, payment gateway integrations, and automation tools like Playwright and Workato. My responsibilities include optimizing API performance, implementing clean database-driven architectures, and deploying AI-powered features into production systems.'
     },
     {
-      title: 'Apprenticeship - Software Developer Associate',
+      title: 'Software Developer Associate - Apprenticeship',
       company: 'PMKVY',
       period: 'Aug 2023 - Feb 2024',
       location: 'CU, Mohali, India',
