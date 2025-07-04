@@ -10,62 +10,62 @@ const Projects = () => {
     {
       id: 1,
       title: 'Genhance.ai',
-      description: 'Worked on Frontend & Backend Dev. part of this webapp which is purpose-built for the GenAI era, offering comprehensive solutions that go beyond tracking to provide actionable improvements and autonomous optimization for GEO(GenAI Engine Optimization).',
+      description: 'Worked on Frontend & Backend Dev of this webapp which is purpose-built for the GenAI era, offering comprehensive GEO(GenAI Engine Optimization) solutions.',
       image: '/apdas/genhance_ai.jpg',
-      technologies: ['Python (flask)', 'Next.js', 'OpenAI API', 'AWS RDS'],
+      technologies: ['Python - flask', 'React - Next.js', 'OpenAI API', 'OpenRouter', 'AWS - EC2, RDS, S3, SQS'],
       category: ['Full Stack Platforms', 'AI & Automation', 'Industry Projects'],
-      github: '#',
-      live: '#'
+      github: '',
+      live: 'https://genhance.ai/'
     },
     {
       id: 2,
+      title: 'Patibl',
+      description: 'Led full-stack development, built secure authentication using OAuth/JWT and session control via Next-Auth for rolebased dashboards.',
+      image: 'apdas/patibl.png',
+      technologies: ['Django (DRF)', 'Next.js', 'MongoDB', 'Stripe', 'AWS - EC2', 'BigQuery'],
+      category: ['Full Stack Platforms', 'Industry Projects'],
+      github: '',
+      live: 'http://patibl.com/'
+    },
+    {
+      id: 3,
+      title: 'AI ChatBot',
+      description: 'Deployed an OpenAI-powered chatbot\'s backend on serverless architecture - AWS Lambda for a UK client, enabling real-time support.',
+      image: '/apdas/ondemandassesment_chatbot.png',
+      technologies: ['Python', 'AWS Lambda', 'DynamoDB', 'S3'],
+      category: ['AI & Automation', 'Industry Projects', 'Backend Engineering'],
+      github: '',
+      live: 'https://ondemandassessment.com/'
+    },
+    {
+      id: 4,
       title: 'Modified Text Editor',
       description: 'Designed a Windows Text Editing software using Python. Include following features - Text box, menu bar, tool & status bar, font formattings, scroll bar, etc.',
       image: '/apdas/modified_text_editor.webp',
       technologies: ['Python3', 'Tkinter'],
       category: ['Backend Engineering', 'Personal Projects'],
       github: 'https://github.com/dasamarpreet/Modified_Text_Editor',
-      live: '#'
-    },
-    {
-      id: 3,
-      title: 'Weather Dashboard',
-      description: 'Beautiful weather dashboard with location-based forecasts, interactive maps, and detailed weather analytics.',
-      image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['Vue.js', 'API Integration', 'Chart.js'],
-      category: ['Industry Projects'],
-      github: '#',
-      live: '#'
-    },
-    {
-      id: 4,
-      title: 'AI Content Generator',
-      description: 'AI-powered content generation tool using OpenAI API. Features include text generation, image creation, and content optimization.',
-      image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['Python', 'FastAPI', 'OpenAI', 'React'],
-      category: ['AI & Automation'],
-      github: '#',
-      live: '#'
+      live: ''
     },
     {
       id: 5,
-      title: 'Mobile Banking App',
+      title: 'CollabNest',
       description: 'Secure mobile banking application with biometric authentication, transaction history, and budget tracking features.',
-      image: 'https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['React Native', 'Firebase', 'Biometrics'],
-      category: ['Personal Projects'],
-      github: '#',
-      live: '#'
+      image: '/apdas/collabnest.png',
+      technologies: ['MERN Stack', 'Node.js', 'React.js', 'Express.js', 'MongoDB'],
+      category: ['Personal Projects', 'Full Stack Platforms',],
+      github: 'https://github.com/dasamarpreet/CollabNest',
+      live: ''
     },
     {
       id: 6,
-      title: 'Task Management App',
-      description: 'Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['React', 'TypeScript', 'Socket.io', 'PostgreSQL'],
-      category: ['Full Stack Platforms'],
-      github: '#',
-      live: '#'
+      title: 'Personal AI Assitant',
+      description: 'I\'m currently working on an AI based personal assistant',
+      image: '/apdas/personal_assistant.png',
+      technologies: ['Python', 'Reactjs'],
+      category: ['AI & Automation', 'Personal Projects'],
+      github: '',
+      live: ''
     }
   ];
 
@@ -85,7 +85,7 @@ const Projects = () => {
     setSelectedImage(null);
   };
 
-  const handleBackdropClick = (e) => {
+  const handleBackdropClick = (e: any) => {
     if (e.target === e.currentTarget) {
       closeModal();
     }
@@ -108,23 +108,24 @@ const Projects = () => {
         >
           <h1 className="text-5xl font-bold text-white mb-6">My Projects</h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Here's a collection of projects I've worked on, showcasing my skills in 
-            backend & full-stack development, GenAI tools, and emerging technologies.
+            Here's a collection of some of the industrial & personal projects I've worked on, showcasing my skills in 
+            backend & frontend development, GenAI tools, and emerging technologies.
           </p><br/>
-          <hr/>
+          {/* <hr/>
           <br/>
           <p className="text-xl text-red-300 max-w-3xl mx-auto">
             These are demo entries. I'm working on this section for now!
-          </p>
+          </p> */}
         </motion.div>
 
         {/* Filter Buttons */}
         <motion.div 
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center items-center gap-4 mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
+          <Filter size={28} className="text-white mr-2" />
           {categories.map((category) => (
             <button
               key={category}
@@ -181,21 +182,28 @@ const Projects = () => {
                 </div>
                 
                 <div className="flex gap-4">
-                  <a
-                    href={project.github}
-                    target='_blank'
-                    className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-300"
-                  >
-                    <Github size={18} />
-                    Code
-                  </a>
-                  <a
-                    href={project.live}
-                    className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-300"
-                  >
-                    <ExternalLink size={18} />
-                    Live Demo
-                  </a>
+                  {project.github && 
+                    <a
+                      href={project.github}
+                      target='_blank'
+                      className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-300"
+                      onClick={(e) => {e.preventDefault();}}
+                    >
+                      <Github size={18} />
+                      Code
+                    </a>
+                  }
+                  {project.live && 
+                    <a
+                      href={project.live}
+                      target='_blank'
+                      className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-300"
+                      onClick={(e) => {e.preventDefault();}}
+                    >
+                      <ExternalLink size={18} />
+                      Live Demo
+                    </a>
+                  }
                 </div>
               </div>
             </motion.div>

@@ -18,17 +18,6 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // alert('Message sent successfully!');
-    setSuccessMsg("Message sent successfully!");
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    setTimeout(()=> {
-      setSuccessMsg("");
-    }, 2000);
-  };
 
   const contactInfo = [
     {
@@ -72,6 +61,13 @@ const Contact = () => {
     }
   ];
 
+  const handleFormSubmit = async () => {
+    setSuccessMsg("Message sent. You'll get a reply soon!");
+    setTimeout(()=>{
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    }, 2000);
+  };
+
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -103,7 +99,13 @@ const Contact = () => {
           >
             <div className="glass-effect rounded-xl p-8">
               <h2 className="text-2xl font-bold text-white mb-6">Send a Message</h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form
+               action="https://script.google.com/macros/s/AKfycbwepaNRndngh2tdMRKsHdH5yAePZsirlm-lxJho1hGOOHAGid05sWD4M5QFRlOD_7VipA/exec"
+               method="POST"
+               target="hidden_iframe"
+               className="space-y-6"
+               onSubmit={() => {handleFormSubmit(); setTimeout(() => setSuccessMsg(""), 2000);}}
+               >
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
@@ -169,6 +171,7 @@ const Contact = () => {
                   />
                 </div>
 
+                <iframe name="hidden_iframe" style={{ display: 'none' }}></iframe>
                 {successMessage && 
                   <div>
                     <label htmlFor="message" className="block text-center text-md font-medium text-green-400 mb-2">
@@ -184,7 +187,7 @@ const Contact = () => {
                   className="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors duration-300 flex items-center justify-center gap-2"
                 >
                   <Send size={20} />
-                  Send Message
+                  { "Send Message"}
                 </motion.button>
               </form>
             </div>
