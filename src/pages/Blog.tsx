@@ -1,69 +1,72 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, Tag, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Blog = () => {
   const blogPosts = [
     {
       id: 1,
-      title: 'Building Scalable React Applications with TypeScript',
-      excerpt: 'Learn how to structure large React applications using TypeScript, focusing on maintainability, type safety, and developer experience.',
-      image: 'https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=800',
-      date: '2024-01-15',
+      title: 'Unlocking the Power of RAG (Retrieval Augmented Generation)',
+      excerpt: 'Discover how Retrieval Augmented Generation (RAG) is transforming AI with dynamic knowledge retrieval. Learn how RAG combines large language models with real-time data to deliver accurate, domain-specific solutions.',
+      image: '/apdas/blog_images/RAG_thumbnail.webp',
+      date: '2025-07-05',
       readTime: '8 min read',
-      tags: ['React', 'TypeScript', 'Architecture'],
-      featured: true
+      tags: ['RAG', 'LLM', 'NLP', 'Machine Learning', 'Artificial Intelligence'],
+      featured: true,
+      url: '/blog/retrieval-augmented-generation'
     },
     {
       id: 2,
-      title: 'The Future of Web Development: Trends to Watch in 2024',
-      excerpt: 'Exploring the latest trends in web development including AI integration, edge computing, and the evolution of JavaScript frameworks.',
-      image: 'https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=800',
-      date: '2024-01-10',
-      readTime: '6 min read',
-      tags: ['Web Development', 'Trends', 'Technology'],
-      featured: false
+      title: 'Unlocking the Power of RAG (Retrieval Augmented Generation)',
+      excerpt: 'Discover how Retrieval Augmented Generation (RAG) is transforming AI with dynamic knowledge retrieval. Learn how RAG combines large language models with real-time data to deliver accurate, domain-specific solutions.',
+      image: '/apdas/blog_images/RAG_thumbnail.webp',
+      date: '2025-07-05',
+      readTime: '8 min read',
+      tags: ['RAG', 'LLM', 'NLP', 'Machine Learning', 'Artificial Intelligence'],
+      featured: false,
+      url: '/blog/retrieval-augmented-generation'
     },
-    {
-      id: 3,
-      title: 'Optimizing Performance in Modern Web Applications',
-      excerpt: 'A comprehensive guide to web performance optimization, covering everything from code splitting to image optimization and caching strategies.',
-      image: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=800',
-      date: '2024-01-05',
-      readTime: '10 min read',
-      tags: ['Performance', 'Optimization', 'Web Development'],
-      featured: true
-    },
-    {
-      id: 4,
-      title: 'Understanding Microservices Architecture',
-      excerpt: 'Deep dive into microservices architecture, its benefits, challenges, and best practices for implementation in modern applications.',
-      image: 'https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=800',
-      date: '2023-12-28',
-      readTime: '12 min read',
-      tags: ['Architecture', 'Backend', 'Microservices'],
-      featured: false
-    },
-    {
-      id: 5,
-      title: 'CSS Grid vs Flexbox: When to Use What',
-      excerpt: 'A practical comparison of CSS Grid and Flexbox, with real-world examples and use cases to help you choose the right layout method.',
-      image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800',
-      date: '2023-12-20',
-      readTime: '7 min read',
-      tags: ['CSS', 'Layout', 'Frontend'],
-      featured: false
-    },
-    {
-      id: 6,
-      title: 'Getting Started with GraphQL and React',
-      excerpt: 'Learn how to integrate GraphQL with React applications, including setup, queries, mutations, and best practices for data fetching.',
-      image: 'https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=800',
-      date: '2023-12-15',
-      readTime: '9 min read',
-      tags: ['GraphQL', 'React', 'API'],
-      featured: false
-    }
+    // {
+    //   id: 3,
+    //   title: 'Optimizing Performance in Modern Web Applications',
+    //   excerpt: 'A comprehensive guide to web performance optimization, covering everything from code splitting to image optimization and caching strategies.',
+    //   image: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=800',
+    //   date: '2024-01-05',
+    //   readTime: '10 min read',
+    //   tags: ['Performance', 'Optimization', 'Web Development'],
+    //   featured: true
+    // },
+    // {
+    //   id: 4,
+    //   title: 'Understanding Microservices Architecture',
+    //   excerpt: 'Deep dive into microservices architecture, its benefits, challenges, and best practices for implementation in modern applications.',
+    //   image: 'https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=800',
+    //   date: '2023-12-28',
+    //   readTime: '12 min read',
+    //   tags: ['Architecture', 'Backend', 'Microservices'],
+    //   featured: false
+    // },
+    // {
+    //   id: 5,
+    //   title: 'CSS Grid vs Flexbox: When to Use What',
+    //   excerpt: 'A practical comparison of CSS Grid and Flexbox, with real-world examples and use cases to help you choose the right layout method.',
+    //   image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800',
+    //   date: '2023-12-20',
+    //   readTime: '7 min read',
+    //   tags: ['CSS', 'Layout', 'Frontend'],
+    //   featured: false
+    // },
+    // {
+    //   id: 6,
+    //   title: 'Getting Started with GraphQL and React',
+    //   excerpt: 'Learn how to integrate GraphQL with React applications, including setup, queries, mutations, and best practices for data fetching.',
+    //   image: 'https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=800',
+    //   date: '2023-12-15',
+    //   readTime: '9 min read',
+    //   tags: ['GraphQL', 'React', 'API'],
+    //   featured: false
+    // }
   ];
 
   const featuredPost = blogPosts.find(post => post.featured);
@@ -96,11 +99,6 @@ const Blog = () => {
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Thoughts, tutorials, and insights about web development, technology trends, 
             and my journey as a software developer.
-          </p><br/>
-          <hr/>
-          <br/>
-          <p className="text-xl text-red-300 max-w-3xl mx-auto">
-            These are demo entries. I'm working on this section for now!
           </p>
         </motion.div>
 
@@ -113,6 +111,7 @@ const Blog = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h2 className="text-2xl font-bold text-white mb-8">Featured Article</h2>
+            <Link to={featuredPost.url || "#"} className="block" style={{ textDecoration: "none" }}>
             <div className="glass-effect rounded-xl overflow-hidden hover-lift group cursor-pointer">
               <div className="md:flex">
                 <div className="md:w-1/2">
@@ -153,13 +152,14 @@ const Blog = () => {
                     ))}
                   </div>
                   
-                  <div className="flex items-center text-blue-400 font-medium group-hover:text-blue-300 transition-colors duration-300">
-                    Read More
-                    <ArrowRight size={18} className="ml-2 transform group-hover:translate-x-1 transition-transform duration-300" />
-                  </div>
+                    <div className="flex items-center text-blue-400 font-medium group-hover:text-blue-300 transition-colors duration-300">
+                      Read More
+                      <ArrowRight size={18} className="ml-2 transform group-hover:translate-x-1 transition-transform duration-300" />
+                    </div>
                 </div>
               </div>
             </div>
+            </Link>
           </motion.section>
         )}
 
@@ -172,6 +172,7 @@ const Blog = () => {
           <h2 className="text-2xl font-bold text-white mb-8">Recent Articles</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {regularPosts.map((post, index) => (
+              <Link to={post.url || "#"} className="block" style={{ textDecoration: "none" }}>
               <motion.article
                 key={post.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -229,12 +230,13 @@ const Blog = () => {
                   </div>
                 </div>
               </motion.article>
+              </Link>
             ))}
           </div>
         </motion.section>
 
         {/* Newsletter Signup */}
-        <motion.section 
+        {/* <motion.section 
           className="mt-20"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -257,7 +259,7 @@ const Blog = () => {
               </button>
             </div>
           </div>
-        </motion.section>
+        </motion.section> */}
       </div>
     </motion.div>
   );

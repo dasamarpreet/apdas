@@ -59,10 +59,10 @@ const Projects = () => {
     },
     {
       id: 6,
-      title: 'Personal AI Assitant',
-      description: 'I\'m currently working on an AI based personal assistant',
+      title: 'Ongoing Personal Project',
+      description: 'I\'m currently working on a new self-paced project to enhance my backend & frontend development skills.',
       image: '/apdas/personal_assistant.png',
-      technologies: ['Python', 'Reactjs'],
+      technologies: [],
       category: ['AI & Automation', 'Personal Projects'],
       github: '',
       live: ''
@@ -110,12 +110,7 @@ const Projects = () => {
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Here's a collection of some of the industrial & personal projects I've worked on, showcasing my skills in 
             backend & frontend development, GenAI tools, and emerging technologies.
-          </p><br/>
-          {/* <hr/>
-          <br/>
-          <p className="text-xl text-red-300 max-w-3xl mx-auto">
-            These are demo entries. I'm working on this section for now!
-          </p> */}
+          </p>
         </motion.div>
 
         {/* Filter Buttons */}

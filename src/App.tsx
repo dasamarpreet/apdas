@@ -7,6 +7,7 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
+import RetrievalAugmentedGeneration from './pages/blog/retrieval-augmented-generation/page';
 import './App.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/blog/retrieval-augmented-generation" element={<RetrievalAugmentedGeneration />} />
           </Routes>
         </AnimatePresence>
       </div>
