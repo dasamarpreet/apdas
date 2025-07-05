@@ -12,7 +12,7 @@ const Home = () => {
   };
 
   const downloadResume = () => {
-    window.open('/resume.pdf', '_blank');
+    window.open('/apdas/resume.pdf', '_blank');
   };
 
   return (
@@ -60,7 +60,7 @@ const Home = () => {
               transition={{ duration: 0.8, delay: 0.8 }}
             >
               <Link
-                to="/projects"
+                to="/apdas/projects"
                 className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300 hover-lift"
               >
                 View My Work
@@ -83,7 +83,7 @@ const Home = () => {
               <a href="https://www.linkedin.com/in/dasamarpreet/" target='_blank' className="text-gray-400 hover:text-white transition-colors duration-300">
                 <Linkedin size={24} />
               </a>
-              <Link to="/contact" className="text-gray-400 hover:text-white transition-colors duration-300">
+              <Link to="/apdas/contact" className="text-gray-400 hover:text-white transition-colors duration-300">
                 <Mail size={24} />
               </Link>
             </motion.div>
@@ -163,7 +163,7 @@ const Home = () => {
             viewport={{ once: true }}
           >
             <Link
-              to="/about"
+              to="/apdas/about"
               className="inline-block px-8 py-3 glass-effect text-white rounded-lg hover-lift"
             >
               Learn More About Me

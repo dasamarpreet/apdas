@@ -359,7 +359,7 @@ const BlogDetail = () => {
           </div>
           {/* Author */}
           <div className="text-sm text-gray-300 mb-8 pl-1">
-            By <span className="font-semibold text-blue-300">{blog.author}</span>
+            By <span className="font-semibold text-blue-300"><a href='https://www.linkedin.com/in/dasamarpreet/' target='_blank'>{blog.author}</a></span>
           </div>
 
           {/* Body (HTML content) */}

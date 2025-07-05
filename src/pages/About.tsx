@@ -9,14 +9,16 @@ const About = () => {
       company: 'Zestminds Technologies Pvt. Ltd. - 01+ Yrs',
       period: 'July 2024 - Present',
       location: 'Mohali, India',
-      description: 'I currently work as a Software Development Engineer where I design and develop scalable SaaS platforms and backend microservices using Python (Flask, Django) and JavaScript/TypeScript (Next.js). I actively integrate and manage AWS services like S3, SQS, Lambda, and EC2 to ensure high availability and performance. On the frontend, I implemented functionalities that includes calling APIs to post & fetch data, Netx-Auth for storing user session & role-based access. I also work with authentication flows, payment gateway integrations, and automation tools like Playwright and Workato. My responsibilities include optimizing API performance, implementing clean database-driven architectures, and deploying AI-powered features into production systems.'
+      description: 'I currently work as a Software Development Engineer where I design and develop scalable SaaS platforms and backend microservices using Python (Flask, Django) and JavaScript/TypeScript (Next.js). I actively integrate and manage AWS services like S3, SQS, Lambda, and EC2 to ensure high availability and performance. On the frontend, I implemented functionalities that includes calling APIs to post & fetch data, Netx-Auth for storing user session & role-based access. I also work with authentication flows, payment gateway integrations, and automation tools like Playwright and Workato. My responsibilities include optimizing API performance, implementing clean database-driven architectures, and deploying AI-powered features into production systems.',
+      url: 'https://www.zestminds.com/'
     },
     {
       title: 'Software Developer Associate - Apprenticeship',
       company: 'PMKVY - 06 Months',
       period: 'Aug 2023 - Feb 2024',
       location: 'CU, Mohali, India',
-      description: 'I was a Trainee at PMKVY in the sector of "IT-ITes Sector Skills Council NASSCOM" for the Software Developer Associate.'
+      description: 'I was a Trainee at PMKVY in the sector of "IT-ITes Sector Skills Council NASSCOM" for the Software Developer Associate.',
+      url: 'https://www.india.gov.in/pradhan-mantri-kaushal-vikas-yojana-pmkvy'
     }
   ];
 
@@ -26,6 +28,7 @@ const About = () => {
       school: 'Chandigarh University',
       period: '2022 - 2024',
       location: 'Mohali, India',
+      url: 'https://www.cuchd.in/',
       // description: 'Focused on software engineering, algorithms, and web development. Graduated Summa Cum Laude.'
     },
     {
@@ -33,6 +36,7 @@ const About = () => {
       school: 'Chandigarh University',
       period: '2019 - 2022',
       location: 'Mohali, India',
+      url: 'https://www.cuchd.in/'
       // description: 'Focused on software engineering, algorithms, and web development. Graduated Summa Cum Laude.'
     }
   ];
@@ -119,7 +123,7 @@ const About = () => {
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                   <div>
                     <h3 className="text-xl font-semibold text-white">{exp.title}</h3>
-                    <p className="text-blue-400 font-medium">{exp.company}</p>
+                    <p className="text-blue-400 font-medium"><a href={exp.url} target='_blank'>{exp.company}</a></p>
                   </div>
                   <div className="flex items-center gap-4 text-gray-400 text-sm mt-2 md:mt-0">
                     <div className="flex items-center gap-1">
@@ -157,7 +161,7 @@ const About = () => {
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                   <div>
                     <h3 className="text-xl font-semibold text-white">{edu.degree}</h3>
-                    <p className="text-blue-400 font-medium">{edu.school}</p>
+                    <p className="text-blue-400 font-medium"><a href={edu.url} target='_blank'>{edu.school}</a></p>
                   </div>
                   <div className="flex items-center gap-4 text-gray-400 text-sm mt-2 md:mt-0">
                     <div className="flex items-center gap-1">
