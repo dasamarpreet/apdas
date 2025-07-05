@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, Tag, ArrowRight } from 'lucide-react';
+import { Calendar, Clock, Tag, ArrowRight, User2Icon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Blog = () => {
@@ -14,6 +14,7 @@ const Blog = () => {
       readTime: '8 min read',
       tags: ['RAG', 'LLM', 'NLP', 'Machine Learning', 'Artificial Intelligence'],
       featured: true,
+      author: 'Amar Preet Das',
       url: '/apdas/blog/retrieval-augmented-generation'
     },
     {
@@ -25,6 +26,7 @@ const Blog = () => {
       readTime: '8 min read',
       tags: ['RAG', 'LLM', 'NLP', 'Machine Learning', 'Artificial Intelligence'],
       featured: false,
+      author: 'Amar Preet Das',
       url: '/apdas/blog/retrieval-augmented-generation'
     },
     // {
@@ -131,6 +133,10 @@ const Blog = () => {
                       <Clock size={16} />
                       {featuredPost.readTime}
                     </div>
+                    <div className="flex items-center gap-1">
+                      <User2Icon size={16} />
+                      {featuredPost.author}
+                    </div>
                   </div>
                   
                   <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors duration-300">
@@ -151,11 +157,11 @@ const Blog = () => {
                       </span>
                     ))}
                   </div>
-                  
-                    <div className="flex items-center text-blue-400 font-medium group-hover:text-blue-300 transition-colors duration-300">
-                      Read More
-                      <ArrowRight size={18} className="ml-2 transform group-hover:translate-x-1 transition-transform duration-300" />
-                    </div>
+
+                  <div className="flex items-center text-blue-400 font-medium group-hover:text-blue-300 transition-colors duration-300">
+                    Read More
+                    <ArrowRight size={18} className="ml-2 transform group-hover:translate-x-1 transition-transform duration-300" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -197,6 +203,10 @@ const Blog = () => {
                     <div className="flex items-center gap-1">
                       <Clock size={14} />
                       {post.readTime}
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <User2Icon size={14} />
+                      {post.author}
                     </div>
                   </div>
                   
