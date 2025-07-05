@@ -19,11 +19,11 @@ function App() {
         <AnimatePresence mode="wait">
           <Routes>
             <Route path="/apdas" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/blog/retrieval-augmented-generation" element={<RetrievalAugmentedGeneration />} />
+            <Route path="/apdas/about" element={<About />} />
+            <Route path="/apdas/projects" element={<Projects />} />
+            <Route path="/apdas/blog" element={<Blog />} />
+            <Route path="/apdas/contact" element={<Contact />} />
+            <Route path="/apdas/blog/retrieval-augmented-generation" element={<RetrievalAugmentedGeneration />} />
           </Routes>
         </AnimatePresence>
       </div>

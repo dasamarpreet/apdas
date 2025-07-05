@@ -14,7 +14,7 @@ const Blog = () => {
       readTime: '8 min read',
       tags: ['RAG', 'LLM', 'NLP', 'Machine Learning', 'Artificial Intelligence'],
       featured: true,
-      url: '/blog/retrieval-augmented-generation'
+      url: '/apdas/blog/retrieval-augmented-generation'
     },
     {
       id: 2,
@@ -25,7 +25,7 @@ const Blog = () => {
       readTime: '8 min read',
       tags: ['RAG', 'LLM', 'NLP', 'Machine Learning', 'Artificial Intelligence'],
       featured: false,
-      url: '/blog/retrieval-augmented-generation'
+      url: '/apdas/blog/retrieval-augmented-generation'
     },
     // {
     //   id: 3,

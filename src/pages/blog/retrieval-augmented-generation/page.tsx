@@ -139,23 +139,26 @@ const blog = {
 
 const meta_description = `Discover how Retrieval Augmented Generation (RAG) is transforming AI with dynamic knowledge retrieval. Learn how RAG combines large language models with real-time data to deliver accurate, domain-specific solutions.`;
 
-const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://dasamarpreet.github.io/blog/retrieval-augmented-generation';
+const getCurrentUrl = () =>
+  typeof window !== 'undefined'
+    ? window.location.href
+    : 'https://dasamarpreet.github.io/blog/retrieval-augmented-generation';
 
 const shareLinks = [
   {
     name: 'Facebook',
     icon: Facebook,
-    href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`
+    href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(getCurrentUrl())}`
   },
   {
     name: 'LinkedIn',
     icon: Linkedin,
-    href: `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(currentUrl)}`
+    href: `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(getCurrentUrl())}`
   },
   {
     name: 'X',
     icon: Twitter,
-    href: `https://twitter.com/intent/tweet?url=${encodeURIComponent(currentUrl)}&text=${encodeURIComponent(blog.title)}`
+    href: `https://twitter.com/intent/tweet?url=${encodeURIComponent(getCurrentUrl())}&text=${encodeURIComponent(blog.title)}`
   }
 ];
 
@@ -184,7 +187,8 @@ const BlogDetail = () => {
 
   const handleCopyLink = async () => {
     try {
-      await navigator.clipboard.writeText(currentUrl);
+      const urlToCopy = window.location.href; // always the current URL
+      await navigator.clipboard.writeText(urlToCopy);
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
     } catch {
@@ -299,7 +303,7 @@ const BlogDetail = () => {
         <meta property="og:title" content={blog.title} />
         <meta property="og:description" content={meta_description} />
         <meta property="og:image" content={blog.image.startsWith('http') ? blog.image : 'https://dasamarpreet.github.io' + blog.image} />
-        <meta property="og:url" content={currentUrl} />
+        <meta property="og:url" content={getCurrentUrl()} />
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={blog.title} />

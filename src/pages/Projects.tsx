@@ -21,7 +21,7 @@ const Projects = () => {
       id: 2,
       title: 'Patibl',
       description: 'Led full-stack development, built secure authentication using OAuth/JWT and session control via Next-Auth for rolebased dashboards.',
-      image: 'apdas/patibl.png',
+      image: '/apdas/patibl.png',
       technologies: ['Django (DRF)', 'Next.js', 'MongoDB', 'Stripe', 'AWS - EC2', 'BigQuery'],
       category: ['Full Stack Platforms', 'Industry Projects'],
       github: '',

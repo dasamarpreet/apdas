@@ -18,10 +18,10 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Home', path: '/apdas/' },
-    { name: 'About', path: '/about' },
-    { name: 'Projects', path: '/projects' },
-    { name: 'Blog', path: '/blog' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'About', path: '/apdas/about' },
+    { name: 'Projects', path: '/apdas/projects' },
+    { name: 'Blog', path: '/apdas/blog' },
+    { name: 'Contact', path: '/apdas/contact' },
   ];
 
   return (
